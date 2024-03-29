@@ -5,7 +5,7 @@ extends Node2D
 
 var click_position : Vector2
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_released("left_click"):
 		
 		click_position = get_global_mouse_position()

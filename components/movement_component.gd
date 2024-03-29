@@ -10,6 +10,6 @@ func _process(delta: float) -> void:
 		
 		target_position = (click_position - entity.position).normalized()
 		
-		entity.velocity = target_position * 200
+		entity.velocity = target_position * 350 * delta
 		
-		entity.move_and_slide()
+		entity.move_and_collide(entity.velocity)
