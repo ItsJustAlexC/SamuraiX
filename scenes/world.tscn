@@ -1,12 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cihmxhx4l1k1d"]
+[gd_scene load_steps=4 format=3 uid="uid://cihmxhx4l1k1d"]
 
+[ext_resource type="PackedScene" uid="uid://drd0copf8jas5" path="res://scenes/ui.tscn" id="1_art0u"]
 [ext_resource type="PackedScene" uid="uid://bfi5d16us23gm" path="res://scenes/player.tscn" id="1_c1t8s"]
-[ext_resource type="Texture2D" uid="uid://5tcqxms0thru" path="res://icon.svg" id="2_yrcp2"]
+[ext_resource type="PackedScene" uid="uid://brwxmsuhc140t" path="res://scenes/debug_map.tscn" id="1_ic8gw"]
 
 [node name="World" type="Node2D"]
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-192, 0)
-texture = ExtResource("2_yrcp2")
+[node name="UI" parent="." instance=ExtResource("1_art0u")]
 
-[node name="Player" parent="." instance=ExtResource("1_c1t8s")]
+[node name="DebugMap" parent="." instance=ExtResource("1_ic8gw")]
+
+[node name="Player" parent="DebugMap" instance=ExtResource("1_c1t8s")]
