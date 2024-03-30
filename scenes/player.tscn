@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfi5d16us23gm"]
 
 [ext_resource type="Texture2D" uid="uid://c6xft3jkga0kt" path="res://graphics/@.png" id="1_d0mjh"]
-[ext_resource type="Script" path="res://components/movement_component.gd" id="2_8pi8r"]
-[ext_resource type="Script" path="res://components/movement_input_component.gd" id="3_1cyie"]
+[ext_resource type="Script" path="res://components/player_movement_component.gd" id="2_cuox1"]
+[ext_resource type="Script" path="res://components/player_movement_input_component.gd" id="3_331ly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqo1y"]
 size = Vector2(64, 64)
@@ -15,10 +15,10 @@ texture = ExtResource("1_d0mjh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_eqo1y")
 
-[node name="MovementComponent" type="Node2D" parent="." node_paths=PackedStringArray("entity")]
-script = ExtResource("2_8pi8r")
-entity = NodePath("..")
+[node name="PlayerMovementComponent" type="Node2D" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("2_cuox1")
+player = NodePath("..")
 
-[node name="MovementInputComponent" type="Node2D" parent="." node_paths=PackedStringArray("movement_component")]
-script = ExtResource("3_1cyie")
-movement_component = NodePath("../MovementComponent")
+[node name="PlayerMovementInputComponent" type="Node2D" parent="." node_paths=PackedStringArray("player_movement_component")]
+script = ExtResource("3_331ly")
+player_movement_component = NodePath("../PlayerMovementComponent")
