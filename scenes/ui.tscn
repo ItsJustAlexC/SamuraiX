@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://drd0copf8jas5"]
+[gd_scene load_steps=3 format=3 uid="uid://drd0copf8jas5"]
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_strjd"]
+[ext_resource type="Script" path="res://components/camera_movement_component.gd" id="2_s4vyk"]
 
 [node name="UI" type="CanvasLayer"]
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
-position_smoothing_speed = 10.0
+position_smoothing_speed = 15.0
 script = ExtResource("1_strjd")
+
+[node name="CameraMovementComponent" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("camera")]
+script = ExtResource("2_s4vyk")
+camera = NodePath("..")
